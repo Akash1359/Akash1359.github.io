@@ -1,0 +1,91 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #f5f5f5;
+    color: #333;
+}
+
+header {
+    text-align: center;
+    padding: 2rem;
+    background: #4CAF50;
+    color: white;
+    overflow: hidden;
+}
+
+header h1, header p {
+    opacity: 0;  /* Start with invisible */
+    animation: fadeIn 2s forwards;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    animation-delay: 0.5s; /* Delays to create a smooth fade-in */
+}
+
+header p {
+    font-size: 1.2rem;
+    animation-delay: 1.5s; /* Fades in after the header text */
+}
+
+section {
+    margin: 2rem auto;
+    max-width: 600px;
+    padding: 1rem;
+}
+
+section h2 {
+    border-bottom: 2px solid #4CAF50;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.skills-list {
+    list-style: none;
+    padding: 0;
+}
+
+.skills-list li {
+    opacity: 0;
+    animation: slideIn 1s forwards;
+    animation-delay: calc(var(--i) * 0.5s); /* Delays each skill item */
+}
+
+.skills-list li:nth-child(1) { --i: 1; }
+.skills-list li:nth-child(2) { --i: 2; }
+.skills-list li:nth-child(3) { --i: 3; }
+.skills-list li:nth-child(4) { --i: 4; }
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background: #333;
+    color: white;
+}
+
+footer a {
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+/* Keyframes for Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px); /* Starts below and slides up */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
